@@ -2,7 +2,9 @@
 
 If you want to just check out the guestbook application, kick it around here: http://a91538fe9169411e9bb560209f7f5bbc-1044359555.us-west-2.elb.amazonaws.com:3000/
 
-If you want to walkthrough the Demo and build an Amazon EKS Cluster and Worker Nodes, continue on from here and follow each step carefully. Holler with any problems. I'm very much a newb on this Kubernetes technology, though ramping up quickly.
+If you want to walkthrough the Demo and build an Amazon EKS Cluster and Worker Nodes, continue on from here and follow each step carefully. Holler with any problems. I'm very much a newb on this Kubernetes technology, though ramping up quickly. The stacks backing this demo are a very rough attempt towards this architecture.
+
+![Amazon EKS Cluster for Microservices](assets/aws-architecture.png)
 
 ## Create EKS Cluster Service Role in IAM
 
