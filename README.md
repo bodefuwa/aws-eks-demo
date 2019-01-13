@@ -358,4 +358,18 @@ When you are finished experimenting with your guest book application, you should
 kubectl delete rc/redis-master rc/redis-slave rc/guestbook svc/redis-master svc/redis-slave svc/guestbook
 ```
 
-When you are done with your Amazon EKS cluster, you should delete it and its resources so that you do not incur additional charges. Be warned that the EKS Cluster and Worker Nodes will rack up some costs pretty quickly if left unchecked.
+When you are done with your Amazon EKS cluster, you should delete it and its resources so that you do not incur additional charges. Be warned that the EKS Cluster and Worker Nodes will rack up some costs pretty quickly if left unchecked. Use these commands to clean up your stacks and EKS cluster.
+
+```bash
+# Delete the worker nodes/stack.
+aws cloudformation delete-stack --profile=stoic \
+    --stack-name "Stoic-EksCluster-WorkerNodes-Stack"
+
+# Delete the EKS cluster.
+aws eks delete-cluster --profile=stoic \
+    --name "Stoic-EksCluster"
+
+# Delete the EKS cluster VPC.
+aws cloudformation delete-stack --profile=stoic \
+    --stack-name "Stoic-EksCluster-Vpc-Stack"
+```
